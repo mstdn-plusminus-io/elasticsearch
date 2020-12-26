@@ -15,6 +15,7 @@ steps:
         - master
         - staging
       event:
+        - push
         - tag
 
   - name: build latest image
@@ -28,6 +29,8 @@ steps:
     when:
       branch:
         - master
+      event:
+        - push
 
   - name: build tagged image
     image: plugins/docker
@@ -57,6 +60,7 @@ steps:
         - master
         - staging
       event:
+        - push
         - tag
       status:
         - success

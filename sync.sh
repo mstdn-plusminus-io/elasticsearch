@@ -10,7 +10,9 @@ case $OK in
   [Yy]* )
     git add .
     git commit -S -m "$COMMIT_MESSAGE"
+    git tag -a "v$VERSION" -m "$COMMIT_MESSAGE"
     git push
+    git push origin "v$VERSION"
     ;;
   * )
     echo "skipped"

@@ -9,7 +9,7 @@ steps:
       webhook:
         from_secret: slack_webhook_url
       template: >
-        {{repo.owner}}/{{repo.name}} ({{build.branch}}) build #{{build.number}} start: {{build.link}}
+        {{repo.owner}}/{{repo.name}} ({{build.branch}}) build #{{build.number}} (amd64) start: {{build.link}}
     when:
       branch:
         - master
@@ -51,9 +51,9 @@ steps:
         from_secret: slack_webhook_url
       template: >
         {{#success build.status}}
-          {{repo.owner}}/{{repo.name}} ({{build.branch}}) build #{{build.number}} succeeded: {{build.link}}
+          {{repo.owner}}/{{repo.name}} ({{build.branch}}) build #{{build.number}} (amd64) succeeded: {{build.link}}
         {{else}}
-          {{repo.owner}}/{{repo.name}} ({{build.branch}}) build #{{build.number}} failed: {{build.link}}
+          {{repo.owner}}/{{repo.name}} ({{build.branch}}) build #{{build.number}} (amd64) failed: {{build.link}}
         {{/success}}
     when:
       branch:
@@ -81,7 +81,7 @@ steps:
       webhook:
         from_secret: slack_webhook_url
       template: >
-        {{repo.owner}}/{{repo.name}} ({{build.branch}}) build #{{build.number}} start: {{build.link}}
+        {{repo.owner}}/{{repo.name}} ({{build.branch}}) build #{{build.number}} (aarch64) start: {{build.link}}
     when:
       branch:
         - master
@@ -124,9 +124,9 @@ steps:
         from_secret: slack_webhook_url
       template: >
         {{#success build.status}}
-          {{repo.owner}}/{{repo.name}} ({{build.branch}}) build #{{build.number}} succeeded: {{build.link}}
+          {{repo.owner}}/{{repo.name}} ({{build.branch}}) build #{{build.number}} (aarch64) succeeded: {{build.link}}
         {{else}}
-          {{repo.owner}}/{{repo.name}} ({{build.branch}}) build #{{build.number}} failed: {{build.link}}
+          {{repo.owner}}/{{repo.name}} ({{build.branch}}) build #{{build.number}} (aarch64) failed: {{build.link}}
         {{/success}}
     when:
       branch:

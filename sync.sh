@@ -8,6 +8,7 @@ read OK
 
 case $OK in
   [Yy]* )
+    set -x
     git add .
     git commit -S -m "$COMMIT_MESSAGE"
     git tag -a "v$VERSION" -m "$COMMIT_MESSAGE"

@@ -12,8 +12,8 @@ case $OK in
     git add .
     git commit -S -m "$COMMIT_MESSAGE"
     git tag -a "v$VERSION" -m "$COMMIT_MESSAGE"
-    git push
-    git push origin "v$VERSION"
+    git push --force
+    git push origin "v$VERSION" --force
     ;;
   * )
     echo "skipped"
